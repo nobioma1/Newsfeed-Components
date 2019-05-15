@@ -92,6 +92,19 @@
   top: 10px;
   right: 10px;
 }
+.article .readButton {
+  background-color: #388E3C;
+  float: right;
+  margin: 20px;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+}
+.article .readButton:hover {
+  background-color: white;
+  color: #388E3C;
+}
 .article .expandButton {
   position: absolute;
   bottom: 0;
@@ -104,6 +117,9 @@
 }
 .article-open {
   height: 400px;
+}
+.remove {
+  left: 0px;
 }
 html,
 body {

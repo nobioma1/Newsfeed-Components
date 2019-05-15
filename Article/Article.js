@@ -10,6 +10,8 @@ class Article {
     this.expandButton.textContent = 'Expand';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', this.expandArticle.bind(this))
+    // create readButton
+    this.readButton();
   }
 
   expandArticle() {
@@ -24,6 +26,21 @@ class Article {
     } else {
       this.expandButton.textContent = 'Expand';
     }
+  }
+
+  readButton() {
+    // Create READ Button
+    const heading = this.domElement.querySelector('h2')
+    const readBtn = document.createElement('button')
+    readBtn.textContent = 'read';
+    readBtn.setAttribute('class', 'readButton');
+    readBtn.addEventListener('click', () => this.read())
+    heading.insertAdjacentElement('beforebegin', readBtn);
+  }
+
+  read() {
+    this.domElement.classList.add('remove')
+    TweenMax.to('.remove', 1.5, { left: -1000, display: 'none', ease: Bounce.easeOut })
   }
 }
 
